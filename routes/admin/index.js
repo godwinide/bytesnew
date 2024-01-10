@@ -48,7 +48,7 @@ router.get("/cancel-withdrawal/:id", ensureAdmin, async (req, res) => {
 
         await User.updateOne({ _id: history.userID }, {
             pending_withdrawal: user.pending_withdrawal - history.amount,
-            balance: Number(req.user.balance) + Number(realamount)
+            balance: Number(req.user.balance) + Number(history.amount)
         });
 
         await History.deleteOne({ _id: id });
