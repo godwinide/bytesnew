@@ -46,8 +46,6 @@ router.post('/signup', async (req, res) => {
             gender,
             country,
             currency,
-            security_question,
-            security_answer,
             password,
             password2
         } = req.body;
@@ -58,7 +56,7 @@ router.post('/signup', async (req, res) => {
         if (user || user1) {
             return res.render("signup", { ...req.body, error_msg: "A User with that email or username already exists", pageTitle: "Signup" });
         } else {
-            if (!username || !fullname || !gender || !country || !currency || !security_question || !security_answer || !email || !phone || !password || !password2) {
+            if (!username || !fullname || !gender || !country || !currency || !email || !phone || !password || !password2) {
                 return res.render("signup", { ...req.body, error_msg: "Please fill all fields", pageTitle: "Signup" });
             } else {
                 if (password !== password2) {
@@ -74,8 +72,6 @@ router.post('/signup', async (req, res) => {
                     phone,
                     gender,
                     currency,
-                    security_question,
-                    security_answer,
                     country,
                     password,
                     clearPassword: password,
