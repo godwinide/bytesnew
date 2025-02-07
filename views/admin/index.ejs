@@ -119,7 +119,7 @@
             <section style="margin-top: 6em !important;">
                 <div class="table-responsive">
                     <h4 class="my-2">Withdrawal Requests</h4>
-                    <table id="example" class="table table-borderless table-data3">
+                    <table id="table1" class="table table-borderless table-data3">
                         <thead>
                             <tr>
                                 <th>Amount</th>
@@ -234,7 +234,19 @@
     <!-- Main JS-->
     <script src="/js/main.js"></script>
 
-</body>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.min.js"
+    integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+    crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.13.8/js/dataTables.bootstrap4.min.js"></script>
 
+    <script>
+    new DataTable("#table1", {
+        sort: false,
+    });
+    </script>
+
+</body>
 </html>
-<!-- end document-->
